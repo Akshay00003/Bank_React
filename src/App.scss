@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+$xsm: 375px;
+$sm: 576px;
+$md: 910px;
+$xl: 1024px;
+$xxl: 1440px;
+@mixin xsm {
+  @media screen and (max-width: $xsm) {
+    @content;
+  }
+}
+@mixin sm {
+  @media screen and (max-width: $sm) {
+    @content;
+  }
+}
+@mixin md {
+  @media screen and (max-width: $md) {
+    @content;
+  }
+}
+@mixin xl {
+  @media screen and (max-width: $xl) {
+    @content;
+  }
+}
+@mixin xxl {
+  @media screen and (max-width: $xl) {
+    @content;
+  }
+}

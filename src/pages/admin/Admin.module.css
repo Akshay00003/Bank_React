@@ -1,0 +1,17 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
+}
+.container .users {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.container .users .user {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}/*# sourceMappingURL=Admin.module.css.map */

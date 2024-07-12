@@ -1,0 +1,45 @@
+.container {
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 4rem;
+}
+.container .admin {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  padding: 10px 20px;
+}
+.container .admin .adminForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.container .admin .adminForm p {
+  color: blueviolet;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.container .user {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  padding: 10px 20px;
+}
+.container .user .userForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.container .user .userForm p {
+  color: blueviolet;
+  text-decoration: underline;
+  cursor: pointer;
+}/*# sourceMappingURL=Home.module.css.map */

@@ -22,41 +22,44 @@ const Home = () => {
     setInputValues({ ...inputValues, [name]: value });
     console.log(inputValues);
   };
-  const handleAdminLogin = async (e) => {
+  const handleAdminLogin = (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post(
+       axios.post(
         "http://localhost:4000/admin/login",
-        { inputValues },
+        { email:inputValues.email,password:inputValues.password },
         { withCredentials: true }
-      );
-      console.log(data);
-      const { success, message } = data;
-      if (success) {
-        navigate("/admin");
-      } else {
-        alert("you email or password is Incorrect");
-      }
-      console.log(success, message);
+      ).then(result=>{
+        console.log(result.data);
+        const {data}=result
+        console.log(data.success);
+        if(data.success){
+          navigate("/admin");
+        }else {
+          alert(`${data.message}`);
+          }
+      })
+
     } catch (error) {
       console.log(error);
     }
   };
-  const handleAdminSingUp = async (e) => {
+  const handleAdminSingUp =  (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post(
+       axios.post(
         "http://localhost:4000/admin/signup",
         { inputValues },
         { withCredentials: true }
-      );
-      console.log(data);
-      const { success, message } = data;
-      if (success) {
-        navigate("/user");
-      } else {
-        alert(`${message}`);
-      }
+      ).then(result=>{
+        console.log(result.data)
+        const {data}=result
+        if(data.success){
+          navigate("/admin");
+        } else {
+           alert(`${data.message}`);
+           }
+      })
     } catch (error) {
       console.log(error);
     }
@@ -94,7 +97,7 @@ const Home = () => {
         { withCredentials: true }
       );
       const { success, message } = data;
-      if (success) {
+      if (data.success) {
         navigate("/user");
       } else {
         alert("your email or password is incorrect");
